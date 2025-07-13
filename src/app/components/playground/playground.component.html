@@ -1,0 +1,420 @@
+<div style="width: min(1024px, 100%); margin: auto; display: grid; gap: 2rem; padding: 2rem;">
+    <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        <div matBadge="4" matBadgeOverlap="false" class="demo-section">Text with a badge</div>
+        <div matBadge="1" matBadgeSize="small" class="demo-section">Text with small badge</div>
+        <div matBadge="1" matBadgeSize="large" class="demo-section">Text with large badge</div>
+    </div>
+    <div>
+        <button mat-raised-button (click)="openBottomSheet()">Open file</button>
+    </div>
+    <div>
+        <section>
+            <div class="example-label">Basic</div>
+            <div class="example-button-row">
+                <button mat-button>Basic</button>
+                <button mat-button disabled>Disabled</button>
+                <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">Raised</div>
+            <div class="example-button-row">
+                <button mat-raised-button>Basic</button>
+                <button mat-raised-button disabled>Disabled</button>
+                <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">Stroked</div>
+            <div class="example-button-row">
+                <button mat-stroked-button>Basic</button>
+                <button mat-stroked-button disabled>Disabled</button>
+                <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">Flat</div>
+            <div class="example-button-row">
+                <button mat-flat-button>Basic</button>
+                <button mat-flat-button disabled>Disabled</button>
+                <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">Icon</div>
+            <div class="example-button-row">
+                <div class="example-flex-container">
+                    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">FAB</div>
+            <div class="example-button-row">
+                <div class="example-flex-container">
+                    <div class="example-button-container">
+                        <button mat-fab aria-label="Example icon button with a delete icon">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                    <div class="example-button-container">
+                        <button mat-fab disabled aria-label="Example icon button with a heart icon">
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">Mini FAB</div>
+            <div class="example-button-row">
+                <div class="example-flex-container">
+                    <div class="example-button-container">
+                        <button mat-mini-fab aria-label="Example icon button with a menu icon">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                    </div>
+                    <div class="example-button-container">
+                        <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                            <mat-icon>home</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">Extended Fab</div>
+            <div class="example-button-row">
+                <div class="example-flex-container">
+                    <div class="example-button-container">
+                        <button mat-fab extended>
+                            <mat-icon>favorite</mat-icon>
+                            Basic
+                        </button>
+                    </div>
+                    <div class="example-button-container">
+                        <button mat-fab extended disabled>
+                            <mat-icon>favorite</mat-icon>
+                            Disabled
+                        </button>
+                    </div>
+                    <div class="example-button-container">
+                        <a mat-fab extended routerLink=".">
+                            <mat-icon>favorite</mat-icon>
+                            Link
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="bold">Bold</mat-button-toggle>
+            <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div>
+        <mat-card class="example-card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>Chihuahua</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quidem aut accusantium iure nemo
+                    laborum sapiente, ad quo vitae in libero at odit rem nulla nobis perferendis porro, ab minus?</p>
+            </mat-card-content>
+            <mat-card-footer class="example-card-footer">
+                <mat-chip-set aria-label="Chihuahua traits">
+                    <mat-chip>charming</mat-chip>
+                    <mat-chip>graceful</mat-chip>
+                    <mat-chip>sassy</mat-chip>
+                </mat-chip-set>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+    <div>
+        <section class="example-section" [formGroup]="toppings">
+            <h4>Select your toppings:</h4>
+            <p><mat-checkbox formControlName="pepperoni">Pepperoni</mat-checkbox></p>
+            <p><mat-checkbox formControlName="extracheese">Extra Cheese</mat-checkbox></p>
+            <p><mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox></p>
+        </section>
+        <section class="example-section" [formGroup]="toppings">
+            <h4>You chose:</h4>
+            {{toppings.value | json}}
+        </section>
+    </div>
+    <div>
+        <mat-chip-set aria-label="Fish selection">
+            <mat-chip>One fish</mat-chip>
+            <mat-chip>Two fish</mat-chip>
+            <mat-chip>Three fish</mat-chip>
+            <mat-chip disabled>Four fish</mat-chip>
+        </mat-chip-set>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="pickerr">
+                <input matStartDate placeholder="Start date">
+                <input matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="pickerr"></mat-datepicker-toggle>
+            <mat-date-range-picker #pickerr></mat-date-range-picker>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+            @if (value) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+            }
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Number</mat-label>
+            <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+                [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                @for (option of filteredOptions | async; track option) {
+                <mat-option [value]="option">{{option}}</mat-option>
+                }
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Favorite food</mat-label>
+            <mat-select>
+                @for (food of foods; track food) {
+                <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Pick a time</mat-label>
+            <input matInput [matTimepicker]="pickert">
+            <mat-timepicker-toggle matIconSuffix [for]="pickert" />
+            <mat-timepicker #pickert />
+        </mat-form-field>
+        <mat-slider style="width: 100%;">
+            <input matSliderThumb>
+        </mat-slider>
+    </div>
+    <div>
+        <button mat-button (click)="openDialog()">Open dialog</button>
+    </div>
+    <div>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title> This is the expansion title </mat-panel-title>
+                    <mat-panel-description> This is a summary of the content </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>This is the primary content of the panel.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Self aware panel </mat-panel-title>
+                    <mat-panel-description>
+                        Currently I am {{panelOpenState() ? 'open' : 'closed'}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    </div>
+    <div>
+        <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+        <mat-menu #animals="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+        </mat-menu>
+
+        <mat-menu #vertebrates="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+            <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+            <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+            <button mat-menu-item>Birds</button>
+            <button mat-menu-item>Mammals</button>
+        </mat-menu>
+
+        <mat-menu #invertebrates="matMenu">
+            <button mat-menu-item>Insects</button>
+            <button mat-menu-item>Molluscs</button>
+            <button mat-menu-item>Crustaceans</button>
+            <button mat-menu-item>Corals</button>
+            <button mat-menu-item>Arachnids</button>
+            <button mat-menu-item>Velvet worms</button>
+            <button mat-menu-item>Horseshoe crabs</button>
+        </mat-menu>
+
+        <mat-menu #fish="matMenu">
+            <button mat-menu-item>Baikal oilfish</button>
+            <button mat-menu-item>Bala shark</button>
+            <button mat-menu-item>Ballan wrasse</button>
+            <button mat-menu-item>Bamboo shark</button>
+            <button mat-menu-item>Banded killifish</button>
+        </mat-menu>
+
+        <mat-menu #amphibians="matMenu">
+            <button mat-menu-item>Sonoran desert toad</button>
+            <button mat-menu-item>Western toad</button>
+            <button mat-menu-item>Arroyo toad</button>
+            <button mat-menu-item>Yosemite toad</button>
+        </mat-menu>
+
+        <mat-menu #reptiles="matMenu">
+            <button mat-menu-item>Banded Day Gecko</button>
+            <button mat-menu-item>Banded Gila Monster</button>
+            <button mat-menu-item>Black Tree Monitor</button>
+            <button mat-menu-item>Blue Spiny Lizard</button>
+            <button mat-menu-item disabled>Velociraptor</button>
+        </mat-menu>
+    </div>
+    <div>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div>
+        <mat-spinner></mat-spinner>
+    </div>
+    <div>
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div>
+        <p><mat-slide-toggle>Slide me!</mat-slide-toggle></p>
+        <p><mat-slide-toggle labelPosition="before">...and slide me too!</mat-slide-toggle></p>
+    </div>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+        <mat-form-field>
+            <mat-label>Message</mat-label>
+            <input matInput value="Disco party!" #message>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Action</mat-label>
+            <input matInput value="Dance" #action>
+        </mat-form-field>
+
+        <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+    </div>
+    <div>
+        <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+        </button>
+        <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Fill out your name</ng-template>
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+                <form [formGroup]="secondFormGroup">
+                    <mat-form-field>
+                        <mat-label>Address</mat-label>
+                        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                <p>You are now done.</p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+            </mat-step>
+        </mat-stepper>
+    </div>
+    <div>
+        <mat-tab-group>
+            <mat-tab label="First"> Content 1 </mat-tab>
+            <mat-tab label="Second"> Content 2 </mat-tab>
+            <mat-tab label="Third"> Content 3 </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div>
+        <button mat-raised-button matTooltip="Info about the action"
+            aria-label="Button that displays a tooltip when focused or hovered over">
+            Action
+        </button>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="progress">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+                    <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                </ng-container>
+
+                <!-- Fruit Column -->
+                <ng-container matColumnDef="fruit">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
+                    <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+    </div>
+</div>
