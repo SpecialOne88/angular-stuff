@@ -1,0 +1,254 @@
+$fonts-url: "assets/fonts/";
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 100 700;
+  src: local("Material Icons"),
+    url(#{$fonts-url} + "MaterialSymbolsOutlined.woff2")
+      format("woff2 supports variations"),
+    url(#{$fonts-url} + "MaterialSymbolsOutlined.woff2")
+      format("woff2-variations"),
+    url(#{$fonts-url} + "MaterialSymbolsOutlined.ttf") format("truetype");
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(#{$fonts-url} + "Outfit-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-ThinItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-ExtraLightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-LightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-MediumItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-SemiBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-ExtraBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(#{$fonts-url} + "Montserrat-BlackItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+}

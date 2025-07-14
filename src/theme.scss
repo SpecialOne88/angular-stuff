@@ -3,7 +3,31 @@
 html {
   /* My color theme */
   --primary-color: light-dark(#030303, #f1f1f1);
+  --primary-color-75: color-mix(in srgb, var(--primary-color), transparent 25%);
+  --primary-color-50: color-mix(in srgb, var(--primary-color), transparent 50%);
+  --primary-color-25: color-mix(in srgb, var(--primary-color), transparent 75%);
+  --primary-color-05: color-mix(in srgb, var(--primary-color), transparent 95%);
   --on-primary-color: light-dark(#f1f1f1, #030303);
+  --on-primary-color-75: color-mix(
+    in srgb,
+    var(--on-primary-color),
+    transparent 25%
+  );
+  --secondary-color: light-dark(#7a32d6, #d7baff);
+  --on-secondary-color: light-dark(#ffffff, #440088);
+  --border-color: light-dark(#747878, #8e9192);
+  --border-variant-color: light-dark(#c4c7c7, #444748);
+  --form-field-color: light-dark(#e6e6e6, #1c1c1c);
+  --on-form-field-color: light-dark(#030303, #f1f1f1);
+  --background-color: light-dark(#fdf8f8, #0a0a0a);
+  --on-background-color: light-dark(#1c1b1b, #e5e2e1);
+  /* card color */
+  --surface-color: light-dark(#fdf8f8, #141313);
+  --on-surface-color: light-dark(#1c1b1b, #e5e2e1);
+
+  --border-radius: 8px;
+
+  --material-font: "Outfit", sans-serif;
 
   /* COLOR SYSTEM VARIABLES */
   color-scheme: light;
@@ -13,75 +37,75 @@ html {
   --mat-sys-on-primary: var(--on-primary-color);
   --mat-sys-primary-container: var(--primary-color);
   --mat-sys-on-primary-container: var(--on-primary-color);
-  --mat-sys-inverse-primary: light-dark(#d7baff, #7d23e5);
-  --mat-sys-primary-fixed: light-dark(#eddcff, #eddcff);
-  --mat-sys-primary-fixed-dim: light-dark(#d7baff, #d7baff);
-  --mat-sys-on-primary-fixed: light-dark(#290055, #290055);
-  --mat-sys-on-primary-fixed-variant: light-dark(#6100bd, #6100bd);
+  --mat-sys-inverse-primary: light-dark(#c9c6c5, #5f5e5e);
+  --mat-sys-primary-fixed: light-dark(#e5e2e1, #e5e2e1);
+  --mat-sys-primary-fixed-dim: light-dark(#c9c6c5, #c9c6c5);
+  --mat-sys-on-primary-fixed: light-dark(#1c1b1b, #1c1b1b);
+  --mat-sys-on-primary-fixed-variant: light-dark(#474646, #474646);
 
   /* Secondary palette variables */
-  --mat-sys-secondary: light-dark(#704ca3, #d7baff);
-  --mat-sys-on-secondary: light-dark(#ffffff, #401971);
-  --mat-sys-secondary-container: light-dark(#eddcff, #57338a);
-  --mat-sys-on-secondary-container: light-dark(#290055, #eddcff);
+  --mat-sys-secondary: var(--secondary-color);
+  --mat-sys-on-secondary: var(--on-secondary-color);
+  --mat-sys-secondary-container: var(--primary-color);
+  --mat-sys-on-secondary-container: var(--on-primary-color);
   --mat-sys-secondary-fixed: light-dark(#eddcff, #eddcff);
   --mat-sys-secondary-fixed-dim: light-dark(#d7baff, #d7baff);
-  --mat-sys-on-secondary-fixed: light-dark(#290055, #290055);
-  --mat-sys-on-secondary-fixed-variant: light-dark(#57338a, #57338a);
+  --mat-sys-on-secondary-fixed: light-dark(#290056, #290056);
+  --mat-sys-on-secondary-fixed-variant: light-dark(#6100bd, #6100bd);
 
   /* Tertiary palette variables */
-  --mat-sys-tertiary: light-dark(#af078f, #ffade0);
-  --mat-sys-on-tertiary: light-dark(#ffffff, #5f004d);
-  --mat-sys-tertiary-container: light-dark(#ffd8ed, #87006d);
-  --mat-sys-on-tertiary-container: light-dark(#3b002e, #ffd8ed);
-  --mat-sys-tertiary-fixed: light-dark(#ffd8ed, #ffd8ed);
-  --mat-sys-tertiary-fixed-dim: light-dark(#ffade0, #ffade0);
-  --mat-sys-on-tertiary-fixed: light-dark(#3b002e, #3b002e);
-  --mat-sys-on-tertiary-fixed-variant: light-dark(#87006d, #87006d);
+  --mat-sys-tertiary: light-dark(#5f5e5e, #c9c6c5);
+  --mat-sys-on-tertiary: light-dark(#ffffff, #313030);
+  --mat-sys-tertiary-container: light-dark(#e5e2e1, #474646);
+  --mat-sys-on-tertiary-container: light-dark(#1c1b1b, #e5e2e1);
+  --mat-sys-tertiary-fixed: light-dark(#e5e2e1, #e5e2e1);
+  --mat-sys-tertiary-fixed-dim: light-dark(#c9c6c5, #c9c6c5);
+  --mat-sys-on-tertiary-fixed: light-dark(#1c1b1b, #1c1b1b);
+  --mat-sys-on-tertiary-fixed-variant: light-dark(#474646, #474646);
 
   /* Neutral palette variables */
-  --mat-sys-background: light-dark(#fff7ff, #16111c);
-  --mat-sys-on-background: light-dark(#1e1a24, #e9dfee);
-  --mat-sys-surface: light-dark(#fff7ff, #16111c);
-  --mat-sys-surface-dim: light-dark(#e0d7e6, #16111c);
-  --mat-sys-surface-bright: light-dark(#fff7ff, #3c3742);
-  --mat-sys-surface-container-low: light-dark(#faf0ff, #1e1a24);
-  --mat-sys-surface-container-lowest: light-dark(#ffffff, #110c16);
-  --mat-sys-surface-container: light-dark(#f4eafa, #221e28);
-  --mat-sys-surface-container-high: light-dark(#efe5f4, #2d2833);
-  --mat-sys-surface-container-highest: light-dark(#e9dfee, #38333e);
-  --mat-sys-on-surface: light-dark(#1e1a24, #e9dfee);
+  --mat-sys-background: var(--background-color);
+  --mat-sys-on-background: var(--on-background-color);
+  --mat-sys-surface: var(--surface-color);
+  --mat-sys-surface-dim: light-dark(#ddd9d8, #141313);
+  --mat-sys-surface-bright: light-dark(#fdf8f8, #3a3939);
+  --mat-sys-surface-container-low: light-dark(#f7f3f2, #1c1b1b);
+  --mat-sys-surface-container-lowest: light-dark(#ffffff, #0e0e0e);
+  --mat-sys-surface-container: light-dark(#f1edec, #201f1f);
+  --mat-sys-surface-container-high: light-dark(#ebe7e6, #2b2a2a);
+  --mat-sys-surface-container-highest: light-dark(#e5e2e1, #353434);
+  --mat-sys-on-surface: var(--on-surface-color);
   --mat-sys-shadow: light-dark(#000000, #000000);
   --mat-sys-scrim: light-dark(#000000, #000000);
-  --mat-sys-surface-tint: light-dark(#7d23e5, #d7baff);
-  --mat-sys-inverse-surface: light-dark(#332e39, #e9dfee);
-  --mat-sys-inverse-on-surface: light-dark(#f7edfd, #332e39);
-  --mat-sys-outline: light-dark(#7d7387, #978da1);
-  --mat-sys-outline-variant: light-dark(#cec2d8, #4b4355);
-  --mat-sys-neutral10: light-dark(
-    #1e1a24,
-    #1e1a24
-  ); /* Variable used for the form field native select option text color */
+  --mat-sys-surface-tint: light-dark(#5f5e5e, #c9c6c5);
+  --mat-sys-inverse-surface: light-dark(#313030, #e5e2e1);
+  --mat-sys-inverse-on-surface: light-dark(#f4f0ef, #313030);
+  --mat-sys-outline: var(--border-color);
+  --mat-sys-outline-variant: var(--border-variant-color);
+  --mat-sys-neutral10: light-dark(#1c1b1b, #1c1b1b);
+  /* Variable used for the form field native select option text color */
 
   /* Error palette variables */
-  --mat-sys-error: light-dark(#ba1a1a, #ffb4ab);
-  --mat-sys-on-error: light-dark(#ffffff, #690005);
-  --mat-sys-error-container: light-dark(#ffdad6, #93000a);
+  --mat-sys-error: light-dark(#bb171c, #ffb4ac);
+  --mat-sys-on-error: light-dark(#ffffff, #690006);
+  --mat-sys-error-container: light-dark(#ffdad6, #93000d);
   --mat-sys-on-error-container: light-dark(#410002, #ffdad6);
 
   /* Neutral variant palette variables */
-  --mat-sys-surface-variant: light-dark(#eadef4, #4b4355);
-  --mat-sys-on-surface-variant: light-dark(#4b4355, #cec2d8);
-  --mat-sys-neutral-variant20: light-dark(
-    #352d3e,
-    #352d3e
-  ); /* Variable used for the sidenav scrim (container background shadow when opened) */
+  --mat-sys-surface-variant: var(--form-field-color);
+  --mat-sys-on-surface-variant: var(--on-form-field-color);
+  --mat-sys-neutral-variant20: light-dark(#2d3132, #2d3132);
+  /* Variable used for the sidenav scrim (container background shadow when opened) */
 
   /* TYPOGRAPHY SYSTEM VARIABLES */
 
   /* Typography variables. Only used in the different typescale system variables. */
-  --mat-sys-brand-font-family: Roboto; /* The font-family to use for brand text. */
-  --mat-sys-plain-font-family: Roboto; /* The font-family to use for plain text. */
+  --mat-sys-brand-font-family: var(
+    --material-font
+  ); /* The font-family to use for brand text. */
+  --mat-sys-plain-font-family: var(
+    --material-font
+  ); /* The font-family to use for plain text. */
   --mat-sys-bold-font-weight: 700; /* The font-weight to use for bold text. */
   --mat-sys-medium-font-weight: 500; /* The font-weight to use for medium text. */
   --mat-sys-regular-font-weight: 400; /* The font-weight to use for regular text. */
@@ -309,10 +333,106 @@ html {
       title-text-weight: 500,
     )
   );
+
+  @include mat.sidenav-overrides(
+    (
+      container-shape: 0,
+    )
+  );
+
+  @include mat.fab-overrides(
+    (
+      container-shape: 100%,
+      small-container-shape: 100%,
+    )
+  );
+
+  @include mat.button-overrides(
+    (
+      filled-container-shape: var(--border-radius),
+      outlined-container-shape: var(--border-radius),
+      protected-container-shape: var(--border-radius),
+      text-container-shape: var(--border-radius),
+    )
+  );
+
+  @include mat.icon-button-overrides(
+    (
+      state-layer-size: 48px,
+    )
+  );
+
+  @include mat.dialog-overrides(
+    (
+      container-shape: var(--mat-sys-corner-large),
+      container-elevation-shadow: var(--mat-sys-level5),
+      container-max-width: 80vw,
+    )
+  );
+
+  @include mat.datepicker-overrides(
+    (
+      calendar-container-elevation-shadow: var(--mat-sys-level2),
+      calendar-container-touch-elevation-shadow: var(--mat-sys-level2),
+      calendar-date-in-range-state-background-color: var(--primary-color-25),
+      calendar-container-shape: var(--border-radius),
+      calendar-container-touch-shape: var(--border-radius),
+    )
+  );
+
+  @include mat.progress-bar-overrides(
+    (
+      track-color: var(--primary-color-25),
+    )
+  );
+
+  @include mat.slide-toggle-overrides(
+    (
+      selected-icon-color: var(--primary-color),
+      selected-handle-color: var(--on-primary-color),
+      selected-focus-handle-color: var(--on-primary-color-75),
+      selected-hover-handle-color: var(--on-primary-color-75),
+      selected-focus-track-color: var(--primary-color),
+      unselected-icon-color: var(--on-primary-color),
+      unselected-handle-color: var(--primary-color),
+      unselected-focus-handle-color: var(--primary-color-75),
+      unselected-hover-handle-color: var(--primary-color-75),
+      unselected-pressed-handle-color: var(--primary-color),
+      selected-pressed-handle-color: var(--on-primary-color),
+    )
+  );
+
+  @include mat.menu-overrides(
+    (
+      container-elevation-shadow: var(--mat-sys-level5),
+    )
+  );
+
+  @include mat.expansion-overrides(
+    (
+      container-shape: var(--mat-sys-corner-medium),
+    )
+  );
+
+  @include mat.button-toggle-overrides(
+    (
+      shape: var(--border-radius),
+    )
+  );
+
+  @include mat.slider-overrides(
+    (
+      inactive-track-color: var(--primary-color-75),
+    )
+  );
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+.icon-filled {
+  font-variation-settings: "FILL" 1;
 }

@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: var(--material-font, sans-serif);
 }
 
 .drawer-container {
