@@ -10,10 +10,16 @@
     (closedStart)="drawerChanged(false)">
     <ul>
       <li>
-        <button mat-button [routerLink]="''" (click)="drawer.close()">Home</button>
+        <button mat-button [routerLink]="''" (click)="drawer.close()">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
       </li>
       <li>
-        <button mat-button [routerLink]="'pg'" (click)="drawer.close()">Playground</button>
+        <button mat-button [routerLink]="'pg'" (click)="drawer.close()">
+          <mat-icon>experiment</mat-icon>
+          <span>Playground</span>
+        </button>
       </li>
     </ul>
   </mat-drawer>

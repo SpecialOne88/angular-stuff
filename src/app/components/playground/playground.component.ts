@@ -37,6 +37,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { TimePickerComponent } from '../time-picker/time-picker.component';
+import { LazyAccordionComponent, LazyContentDirective } from '../lazy-accordion/lazy-accordion.component';
 
 interface Food {
   value: string;
@@ -89,6 +90,8 @@ const NAMES: string[] = [
     AsyncPipe,
     FormsModule,
     JsonPipe,
+    LazyAccordionComponent,
+    LazyContentDirective,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -176,7 +179,7 @@ export class PlaygroundComponent implements OnInit {
 
   constructor() {
     // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+    const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);

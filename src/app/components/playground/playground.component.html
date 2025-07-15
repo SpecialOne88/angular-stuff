@@ -246,6 +246,15 @@
         </mat-accordion>
     </div>
     <div>
+        <app-lazy-accordion [title]="'My Lazy Accordion'" [icon]="'person'" [description]="'Test Description'">
+            <div *appLazyContent>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, atque velit distinctio vero delectus,
+                quisquam quasi beatae deserunt ducimus quam similique commodi ipsam vel, vitae dicta. Doloremque
+                voluptatibus animi eveniet.
+            </div>
+        </app-lazy-accordion>
+    </div>
+    <div>
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
         <mat-icon class="icon-filled" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="humerus"></mat-icon>

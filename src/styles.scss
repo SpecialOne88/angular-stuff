@@ -24,6 +24,28 @@ body {
 
       & li {
         list-style: none;
+
+        & button {
+          width: 100%;
+          text-align: left;
+          border-radius: 0;
+          font-size: 1.1em;
+          padding: 1.5rem;
+          display: flex;
+          justify-content: flex-start;
+
+          & mat-icon {
+            font-size: 1.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: all 250ms ease;
+            font-variation-settings: 'FILL' 0;
+          }
+
+          &:hover mat-icon {
+            font-variation-settings: 'FILL' 1;
+          }
+        }
       }
     }
   }

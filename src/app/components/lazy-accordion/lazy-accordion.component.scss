@@ -1,0 +1,19 @@
+.accordion-title {
+  font-size: 1.2rem;
+  align-self: center;
+  font-weight: 500;
+}
+
+mat-icon ~ .accordion-title,
+img ~ .accordion-title {
+  margin-left: 1rem;
+}
+
+.accordion-description {
+  justify-content: flex-end;
+  font-size: 18px;
+}
+
+.prevent-close {
+  pointer-events: none;
+}
