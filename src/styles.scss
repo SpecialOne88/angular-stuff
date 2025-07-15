@@ -39,11 +39,11 @@ body {
             width: 1.5rem;
             height: 1.5rem;
             transition: all 250ms ease;
-            font-variation-settings: 'FILL' 0;
+            font-variation-settings: "FILL" 0;
           }
 
           &:hover mat-icon {
-            font-variation-settings: 'FILL' 1;
+            font-variation-settings: "FILL" 1;
           }
         }
       }
@@ -129,4 +129,38 @@ button.side-menu-toggle-button {
       }
     }
   }
+}
+
+.date-buttons-container {
+  position: absolute;
+  width: 20px;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 8px;
+  display: grid;
+  gap: 2px;
+  grid-template-rows: repeat(2, 20px);
+  place-items: center;
+
+  & > button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 700;
+    color: var(--mat-sys-on-surface-variant);
+
+    &:hover,
+    &:focus-visible {
+      outline: 1px solid rgba(0 0 0 / 1%);
+      background-color: rgba(0 0 0 / 5%);
+    }
+  }
+}
+
+.mat-form-field-disabled .date-buttons-container > button {
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent);
 }

@@ -12,12 +12,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { AsyncPipe, JsonPipe } from '@angular/common';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { dateFnsLocale, MY_FORMATS } from '../../utils/date-utils';
-import { DateFnsAdapter } from '@angular/material-date-fns-adapter';
 import { map, Observable, startWith } from 'rxjs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTimepickerModule } from '@angular/material/timepicker';
@@ -38,6 +35,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { TimePickerComponent } from '../time-picker/time-picker.component';
 import { LazyAccordionComponent, LazyContentDirective } from '../lazy-accordion/lazy-accordion.component';
+import { DateMaskFullDirective, DateMaskMonthDirective, DateMaskYearDirective } from '../../utils/date-utils';
 
 interface Food {
   value: string;
@@ -88,6 +86,9 @@ const NAMES: string[] = [
   selector: 'app-playground',
   imports: [
     AsyncPipe,
+    DateMaskFullDirective,
+    DateMaskMonthDirective,
+    DateMaskYearDirective,
     FormsModule,
     JsonPipe,
     LazyAccordionComponent,
@@ -126,9 +127,6 @@ const NAMES: string[] = [
   templateUrl: './playground.component.html',
   styleUrl: './playground.component.scss',
   providers: [
-    { provide: DateAdapter, useClass: DateFnsAdapter },
-    { provide: MAT_DATE_LOCALE, useValue: dateFnsLocale },
-    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }
   ]
 })
 export class PlaygroundComponent implements OnInit {
@@ -176,6 +174,10 @@ export class PlaygroundComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  dateFullCtrl = new FormControl<Date | null>(null);
+  dateMonthCtrl = new FormControl<Date | null>(null);
+  dateYearCtrl = new FormControl<Date | null>(null);
 
   constructor() {
     // Create 100 users
@@ -225,6 +227,18 @@ export class PlaygroundComponent implements OnInit {
   }
 
   time = new FormControl<string>('', [Validators.required]);
+
+  setMonthAndYear(date: Date, datePicker: MatDatepicker<Date>) {
+    const newValue = new Date(date.getFullYear(), date.getMonth(), 1, 0, 0, 0);
+    this.dateMonthCtrl.setValue(newValue);
+    datePicker.close();
+  }
+
+  setYear(date: Date, datePicker: MatDatepicker<Date>) {
+    const newValue = new Date(date.getFullYear(), 0, 1, 0, 0, 0);
+    this.dateYearCtrl.setValue(newValue);
+    datePicker.close();
+  }
 }
 
 function createNewUser(id: number): UserData {

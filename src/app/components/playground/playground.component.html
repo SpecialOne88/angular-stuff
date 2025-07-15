@@ -221,6 +221,26 @@
             <app-time-picker [formControl]="time"></app-time-picker>
             <mat-icon matTextSuffix>access_time</mat-icon>
         </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [formControl]="dateFullCtrl" [matDatepicker]="pickerFull" appDateMaskFull>
+            <mat-datepicker-toggle matIconSuffix [for]="pickerFull"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFull></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [formControl]="dateMonthCtrl" [matDatepicker]="pickerMonth" appDateMaskMonth>
+            <mat-datepicker-toggle matIconSuffix [for]="pickerMonth"></mat-datepicker-toggle>
+            <mat-datepicker #pickerMonth startView="multi-year"
+                (monthSelected)="setMonthAndYear($event, pickerMonth)"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [formControl]="dateYearCtrl" [matDatepicker]="pickerYear" appDateMaskYear>
+            <mat-datepicker-toggle matIconSuffix [for]="pickerYear"></mat-datepicker-toggle>
+            <mat-datepicker #pickerYear startView="multi-year"
+                (yearSelected)="setYear($event, pickerYear)"></mat-datepicker>
+        </mat-form-field>
     </div>
     <div>
         <button mat-button (click)="openDialog()">Open dialog</button>
