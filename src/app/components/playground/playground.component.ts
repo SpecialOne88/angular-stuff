@@ -36,6 +36,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { TimePickerComponent } from '../time-picker/time-picker.component';
 import { LazyAccordionComponent, LazyContentDirective } from '../lazy-accordion/lazy-accordion.component';
 import { DateMaskFullDirective, DateMaskMonthDirective, DateMaskYearDirective } from '../../utils/date-utils';
+import { TranslocoModule } from '@jsverse/transloco';
 
 interface Food {
   value: string;
@@ -122,7 +123,8 @@ const NAMES: string[] = [
     MatTimepickerModule,
     MatTooltipModule,
     ReactiveFormsModule,
-    TimePickerComponent
+    TimePickerComponent,
+    TranslocoModule
   ],
   templateUrl: './playground.component.html',
   styleUrl: './playground.component.scss',
