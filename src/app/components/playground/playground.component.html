@@ -216,6 +216,11 @@
         <mat-slider style="width: 100%;">
             <input matSliderThumb>
         </mat-slider>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Pick a time</mat-label>
+            <app-time-picker [formControl]="time"></app-time-picker>
+            <mat-icon matTextSuffix>access_time</mat-icon>
+        </mat-form-field>
     </div>
     <div>
         <button mat-button (click)="openDialog()">Open dialog</button>

@@ -36,6 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { TimePickerComponent } from '../time-picker/time-picker.component';
 
 interface Food {
   value: string;
@@ -116,7 +117,8 @@ const NAMES: string[] = [
     MatTableModule,
     MatTimepickerModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TimePickerComponent
   ],
   templateUrl: './playground.component.html',
   styleUrl: './playground.component.scss',
@@ -218,6 +220,8 @@ export class PlaygroundComponent implements OnInit {
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
+
+  time = new FormControl<string>('', [Validators.required]);
 }
 
 function createNewUser(id: number): UserData {

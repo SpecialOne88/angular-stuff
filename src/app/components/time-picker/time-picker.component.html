@@ -1,0 +1,23 @@
+<div role="group" class="timepicker-input-container" [formGroup]="parts"
+    [attr.aria-describedby]="_formField?.getLabelId()" (focusin)="onFocusIn()" (focusout)="onFocusOut($event)">
+    <input [matAutocomplete]="autoHours" class="timepicker-input-element" formControlName="hours" size="2" maxlength="2"
+        aria-label="Hours" (input)="handleInput(parts.controls.hours, minutes)" (focus)="focusElement($event.target)"
+        #hours #trigger1="matAutocompleteTrigger">
+    <mat-autocomplete #autoHours="matAutocomplete" panelWidth="4rem"
+        (optionSelected)="selectAutoComplete(parts.controls.hours, minutes)">
+        @for (option of hoursList; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+        }
+    </mat-autocomplete>
+    <span class="timepicker-input-spacer">:</span>
+    <input [matAutocomplete]="autoMinutes" class="timepicker-input-element" formControlName="minutes" size="2"
+        maxlength="2" aria-label="Minutes" (input)="handleInput(parts.controls.minutes)"
+        (focus)="focusElement($event.target)" (keyup.backspace)="autoFocusPrev(parts.controls.minutes, hours)" #minutes
+        #trigger2="matAutocompleteTrigger">
+    <mat-autocomplete #autoMinutes="matAutocomplete" panelWidth="4rem"
+        (optionSelected)="selectAutoComplete(parts.controls.minutes)">
+        @for (option of minutesList; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+        }
+    </mat-autocomplete>
+</div>
