@@ -453,5 +453,14 @@
 
             <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
         </div>
+        <div>
+            <button class="toggle-container" (click)="toggle()">
+                <mat-icon class="icon-check">check</mat-icon>
+                <div class="toggle" [class.red]="!isToggled()">
+                    <div class="handle"></div>
+                </div>
+                <mat-icon class="icon-close">close</mat-icon>
+            </button>
+        </div>
     </div>
 </div>

@@ -27,3 +27,6 @@
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
+@if (isLoadingRoute()) {
+<mat-progress-bar class="full-screen-loading" mode="indeterminate"></mat-progress-bar>
+}

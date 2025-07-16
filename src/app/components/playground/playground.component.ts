@@ -241,6 +241,11 @@ export class PlaygroundComponent implements OnInit {
     this.dateYearCtrl.setValue(newValue);
     datePicker.close();
   }
+
+  isToggled = signal(true);
+  toggle() {
+    this.isToggled.set(!this.isToggled());
+  }
 }
 
 function createNewUser(id: number): UserData {

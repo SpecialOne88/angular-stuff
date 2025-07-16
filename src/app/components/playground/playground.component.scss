@@ -45,3 +45,67 @@ section {
 .example-section {
   margin: 12px 0;
 }
+
+/* toggle */
+
+.toggle-container {
+  display: grid;
+  grid-template-columns: 32px 60px 32px;
+  gap: 0.5rem;
+  place-items: center;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 140px;
+
+  & .icon-check {
+    color: green;
+  }
+
+  & .icon-close {
+    color: var(--mat-sys-error);
+  }
+
+  & .toggle {
+    border-radius: 100vw;
+    width: 100%;
+    border: 2px solid var(--border-color);
+    position: relative;
+    cursor: pointer;
+    background-color: green;
+    transition: background-color 400ms ease;
+    height: 32px;
+    box-sizing: border-box;
+
+    &.red {
+      background-color: var(--mat-sys-error);
+
+      & .handle {
+        left: calc(100% - 4px - 24px);
+      }
+    }
+
+    & .handle {
+      position: absolute;
+      top: 2px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: white;
+      transition: all 500ms
+        linear(
+          0,
+          1 44.7%,
+          0.898 51.8%,
+          0.874 55.1%,
+          0.866 58.4%,
+          0.888 64.3%,
+          1 77.4%,
+          0.98 84.5%,
+          1
+        );
+      left: 4px;
+    }
+  }
+}
