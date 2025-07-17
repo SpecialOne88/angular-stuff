@@ -38,6 +38,7 @@ import { LazyAccordionComponent, LazyContentDirective } from '../lazy-accordion/
 import { DateMaskFullDirective, DateMaskMonthDirective, DateMaskYearDirective } from '../../utils/date-utils';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { PopOverDirective } from '../../utils/pop-over.directive';
+import { IntegerOnlyDirective } from '../../utils/integer-only.directive';
 
 interface Food {
   value: string;
@@ -93,6 +94,7 @@ const NAMES: string[] = [
     DateMaskYearDirective,
     FormsModule,
     JsonPipe,
+    IntegerOnlyDirective,
     LazyAccordionComponent,
     LazyContentDirective,
     MatAutocompleteModule,

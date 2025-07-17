@@ -17,7 +17,9 @@
                 <li>So</li>
                 <li>Fat</li>
             </ul>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, minus, impedit earum numquam quisquam natus quasi esse praesentium, voluptate delectus enim dolor sit nisi error id. Rem, tenetur velit. Praesentium.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, minus, impedit earum numquam
+                quisquam natus quasi esse praesentium, voluptate delectus enim dolor sit nisi error id. Rem, tenetur
+                velit. Praesentium.</p>
         </div>
     </ng-template>
     <div>
@@ -256,6 +258,10 @@
             <mat-datepicker-toggle matIconSuffix [for]="pickerYear"></mat-datepicker-toggle>
             <mat-datepicker #pickerYear startView="multi-year"
                 (yearSelected)="setYear($event, pickerYear)"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Numbers Only</mat-label>
+            <input matInput appIntegerOnly>
         </mat-form-field>
     </div>
     <div>
