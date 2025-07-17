@@ -37,6 +37,7 @@ import { TimePickerComponent } from '../time-picker/time-picker.component';
 import { LazyAccordionComponent, LazyContentDirective } from '../lazy-accordion/lazy-accordion.component';
 import { DateMaskFullDirective, DateMaskMonthDirective, DateMaskYearDirective } from '../../utils/date-utils';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { PopOverDirective } from '../../utils/pop-over.directive';
 
 interface Food {
   value: string;
@@ -122,6 +123,7 @@ const NAMES: string[] = [
     MatTableModule,
     MatTimepickerModule,
     MatTooltipModule,
+    PopOverDirective,
     ReactiveFormsModule,
     TimePickerComponent,
     TranslocoModule

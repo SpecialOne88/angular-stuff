@@ -9,6 +9,20 @@
     </div>
     <div>{{'TEST.TRANSLATE' | transloco}}</div>
     <div>{{translated()}}</div>
+    <ng-template #popOverExample>
+        <div>
+            <ul>
+                <li>Yo</li>
+                <li>Mamma</li>
+                <li>So</li>
+                <li>Fat</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, minus, impedit earum numquam quisquam natus quasi esse praesentium, voluptate delectus enim dolor sit nisi error id. Rem, tenetur velit. Praesentium.</p>
+        </div>
+    </ng-template>
+    <div>
+        <button mat-button appPopOver [popOver]="popOverExample">Hover me!</button>
+    </div>
     <div>
         <section>
             <div class="example-label">Basic</div>
