@@ -36,7 +36,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { TimePickerComponent } from '../time-picker/time-picker.component';
 import { LazyAccordionComponent, LazyContentDirective } from '../lazy-accordion/lazy-accordion.component';
 import { DateMaskFullDirective, DateMaskMonthDirective, DateMaskYearDirective } from '../../utils/date-utils';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 interface Food {
   value: string;
@@ -134,6 +134,8 @@ const NAMES: string[] = [
 export class PlaygroundComponent implements OnInit {
   private readonly _formBuilder = inject(FormBuilder);
 
+  private readonly translate: TranslocoService = inject(TranslocoService);
+
   readonly toppings = this._formBuilder.group({
     pepperoni: false,
     extracheese: false,
@@ -215,7 +217,10 @@ export class PlaygroundComponent implements OnInit {
     });
   }
 
+  translated = signal<string>('');
+
   ngOnInit() {
+    this.translated.set(this.translate.translate('TEST.TRANSLATE'));
   }
 
   openBottomSheet(): void {

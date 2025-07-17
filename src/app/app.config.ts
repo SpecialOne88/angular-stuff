@@ -1,4 +1,4 @@
-import { ApplicationConfig, LOCALE_ID, provideZoneChangeDetection, isDevMode } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID, provideZoneChangeDetection, isDevMode, provideAppInitializer, inject } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideDateFnsAdapter } from '@angular/material-date-fns-adapter';
 
@@ -10,7 +10,10 @@ import localeEN from '@angular/common/locales/en-GB';
 import localeIT from '@angular/common/locales/it';
 import { provideHttpClient } from '@angular/common/http';
 import { TranslocoHttpLoader } from './transloco-loader';
-import { provideTransloco } from '@jsverse/transloco';
+import { getBrowserLang, provideTransloco, TranslocoService } from '@jsverse/transloco';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { LocalizedPaginator } from './utils/localized-paginator';
+import { firstValueFrom } from 'rxjs';
 
 registerLocaleData(localeEN);
 registerLocaleData(localeIT);
@@ -29,6 +32,16 @@ export const appConfig: ApplicationConfig = {
         prodMode: !isDevMode(),
       },
       loader: TranslocoHttpLoader
+    }),
+    {
+      provide: MatPaginatorIntl,
+      deps: [
+        TranslocoService
+      ],
+      useFactory: (translateService: TranslocoService) => new LocalizedPaginator(translateService).getPaginatorIntl()
+    },
+    provideAppInitializer(() => {
+      firstValueFrom(inject(TranslocoService).load(getBrowserLang() ?? 'en'))
     })
   ]
 };

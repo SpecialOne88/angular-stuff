@@ -1,5 +1,14 @@
 {
     "TEST": {
         "TRANSLATE": "Mama mia"
+    },
+    "PAGINATOR": {
+        "ITEMS_PAGE": "Risultati per pagina:",
+        "NEXT_PAGE": "Pagina Successiva",
+        "PREV_PAGE": "Pagina Precedente",
+        "FIRST_PAGE": "Prima Pagina",
+        "LAST_PAGE": "Ultima Pagina",
+        "RANGE_0": "0 di {{length}}",
+        "RANGE_1": "{{start}} - {{end}} di {{length}}"
     }
 }
