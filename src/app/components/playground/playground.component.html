@@ -26,6 +26,12 @@
         <button mat-button appPopOver [popOver]="popOverExample">Hover me!</button>
     </div>
     <div>
+        <p>Permissions</p>
+        <div *appHasPermission="'SHOW_ME'">show me</div>
+        <div *appHasPermission="'DONT_SHOW_ME'">dont show me</div>
+        <div *appHasPermission="['YO', 'MAMA']">show me array</div>
+    </div>
+    <div>
         <section>
             <div class="example-label">Basic</div>
             <div class="example-button-row">

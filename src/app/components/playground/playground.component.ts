@@ -39,6 +39,7 @@ import { DateMaskFullDirective, DateMaskMonthDirective, DateMaskYearDirective } 
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { PopOverDirective } from '../../utils/pop-over.directive';
 import { IntegerOnlyDirective } from '../../utils/integer-only.directive';
+import { HasPermissionDirective } from '../../utils/has-permission.directive';
 
 interface Food {
   value: string;
@@ -93,6 +94,7 @@ const NAMES: string[] = [
     DateMaskMonthDirective,
     DateMaskYearDirective,
     FormsModule,
+    HasPermissionDirective,
     JsonPipe,
     IntegerOnlyDirective,
     LazyAccordionComponent,
