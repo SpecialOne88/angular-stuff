@@ -4,6 +4,9 @@
     <span class="hamburger" [class.close]="drawerIsOpen()"><span></span></span>
   </button>
   <div>My App</div>
+  <div style="margin-left: auto;">
+    <app-dark-mode-toggle></app-dark-mode-toggle>
+  </div>
 </mat-toolbar>
 <mat-drawer-container class="drawer-container">
   <mat-drawer #drawer mode="push" closed class="side-nav" [autoFocus]="false" (openedStart)="drawerChanged(true)"

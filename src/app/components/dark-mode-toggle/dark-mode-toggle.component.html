@@ -1,0 +1,100 @@
+<button class="dark-toggle-container" (click)="toggle()" [class.is-dark]="selectedTheme() === 'dark'">
+    <div class="dark-toggle">
+        <div class="dark-handle">
+            <svg class="sun" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512 512" xml:space="preserve">
+                <style type="text/css">
+                    .st0 {
+                        fill: #FAAF3B;
+                    }
+                </style>
+                <g>
+                    <path class="st0"
+                        d="M255.996,127.577c-70.925,0-128.42,57.495-128.42,128.42c0,70.933,57.496,128.428,128.42,128.428 s128.428-57.495,128.428-128.428C384.424,185.072,326.921,127.577,255.996,127.577z" />
+                    <path class="st0"
+                        d="M512,255.996c-78.109-49.042-98.052-93.51-75.065-180.932c-87.414,22.995-131.89,3.036-180.939-75.057 c-49.042,78.093-93.51,98.052-180.932,75.057C98.06,162.487,78.109,206.954,0,255.996c78.109,49.049,98.06,93.525,75.065,180.939 c87.422-22.987,131.89-3.036,180.932,75.057c49.049-78.093,93.525-98.044,180.939-75.057 C413.948,349.522,433.891,305.046,512,255.996z M255.996,423.766c-92.666,0-167.762-75.112-167.762-167.77 c0-92.65,75.096-167.762,167.762-167.762c92.65,0,167.769,75.112,167.769,167.762C423.766,348.654,348.646,423.766,255.996,423.766 z" />
+                </g>
+            </svg>
+            <svg class="moon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 122.88 122.89" xml:space="preserve">
+                <g>
+                    <path fill="white"
+                        d="M49.06,1.27c2.17-0.45,4.34-0.77,6.48-0.98c2.2-0.21,4.38-0.31,6.53-0.29c1.21,0.01,2.18,1,2.17,2.21 c-0.01,0.93-0.6,1.72-1.42,2.03c-9.15,3.6-16.47,10.31-20.96,18.62c-4.42,8.17-6.1,17.88-4.09,27.68l0.01,0.07 c2.29,11.06,8.83,20.15,17.58,25.91c8.74,5.76,19.67,8.18,30.73,5.92l0.07-0.01c7.96-1.65,14.89-5.49,20.3-10.78 c5.6-5.47,9.56-12.48,11.33-20.16c0.27-1.18,1.45-1.91,2.62-1.64c0.89,0.21,1.53,0.93,1.67,1.78c2.64,16.2-1.35,32.07-10.06,44.71 c-8.67,12.58-22.03,21.97-38.18,25.29c-16.62,3.42-33.05-0.22-46.18-8.86C14.52,104.1,4.69,90.45,1.27,73.83 C-2.07,57.6,1.32,41.55,9.53,28.58C17.78,15.57,30.88,5.64,46.91,1.75c0.31-0.08,0.67-0.16,1.06-0.25l0.01,0l0,0L49.06,1.27 L49.06,1.27z" />
+                </g>
+            </svg>
+            <div class="cloud1"></div>
+            <div class="cloud2">
+                <div class="cloud3"></div>
+                <div class="cloud4"></div>
+            </div>
+            <div class="star1">
+                <svg viewBox="0 -0.5 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Vivid-Icons" transform="translate(-903.000000, -411.000000)" fill="#FFF">
+                            <g id="Icons" transform="translate(37.000000, 169.000000)">
+                                <g id="star" transform="translate(858.000000, 234.000000)">
+                                    <g transform="translate(7.000000, 8.000000)" id="Shape">
+                                        <polygon
+                                            points="27.865 31.83 17.615 26.209 7.462 32.009 9.553 20.362 0.99 12.335 12.532 10.758 17.394 0 22.436 10.672 34 12.047 25.574 20.22" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="star2">
+                <svg viewBox="0 -0.5 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Vivid-Icons" transform="translate(-903.000000, -411.000000)" fill="#FFF">
+                            <g id="Icons" transform="translate(37.000000, 169.000000)">
+                                <g id="star" transform="translate(858.000000, 234.000000)">
+                                    <g transform="translate(7.000000, 8.000000)" id="Shape">
+                                        <polygon
+                                            points="27.865 31.83 17.615 26.209 7.462 32.009 9.553 20.362 0.99 12.335 12.532 10.758 17.394 0 22.436 10.672 34 12.047 25.574 20.22" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="star3">
+                <svg viewBox="0 -0.5 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Vivid-Icons" transform="translate(-903.000000, -411.000000)" fill="#FFF">
+                            <g id="Icons" transform="translate(37.000000, 169.000000)">
+                                <g id="star" transform="translate(858.000000, 234.000000)">
+                                    <g transform="translate(7.000000, 8.000000)" id="Shape">
+                                        <polygon
+                                            points="27.865 31.83 17.615 26.209 7.462 32.009 9.553 20.362 0.99 12.335 12.532 10.758 17.394 0 22.436 10.672 34 12.047 25.574 20.22" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="star4">
+                <svg viewBox="0 -0.5 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Vivid-Icons" transform="translate(-903.000000, -411.000000)" fill="#FFF">
+                            <g id="Icons" transform="translate(37.000000, 169.000000)">
+                                <g id="star" transform="translate(858.000000, 234.000000)">
+                                    <g transform="translate(7.000000, 8.000000)" id="Shape">
+                                        <polygon
+                                            points="27.865 31.83 17.615 26.209 7.462 32.009 9.553 20.362 0.99 12.335 12.532 10.758 17.394 0 22.436 10.672 34 12.047 25.574 20.22" />
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</button>

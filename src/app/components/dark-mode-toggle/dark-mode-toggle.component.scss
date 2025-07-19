@@ -1,0 +1,230 @@
+.dark-toggle-container {
+  height: 38px;
+  border: 2px solid #4986ff;
+  background: none;
+  border-radius: 100vw;
+  width: 70px;
+  cursor: pointer;
+  background-color: #4986ff;
+  transition: all 250ms ease;
+}
+
+.dark-toggle-container.is-dark {
+  border-color: #131826;
+  background-color: #131826;
+}
+
+.dark-toggle-container > .dark-toggle {
+  position: relative;
+  height: 100%;
+}
+
+.dark-handle {
+  position: absolute;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 1000ms
+    linear(
+      0,
+      0.008 1.1%,
+      0.031 2.2%,
+      0.129 4.8%,
+      0.257 7.2%,
+      0.671 14.2%,
+      0.789 16.5%,
+      0.881 18.6%,
+      0.957 20.7%,
+      1.019 22.9%,
+      1.063 25.1%,
+      1.094 27.4%,
+      1.114 30.7%,
+      1.112 34.5%,
+      1.018 49.9%,
+      0.99 59.1%,
+      1
+    );
+  left: 2px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.is-dark .dark-handle {
+  left: calc(100% - 2px - 28px);
+}
+
+.dark-toggle-container:not(.is-dark) .sun {
+  opacity: 1;
+  rotate: 0deg;
+}
+
+.dark-toggle-container:not(.is-dark) .moon {
+  opacity: 0;
+  rotate: -180deg;
+}
+
+.is-dark .sun {
+  opacity: 0;
+  rotate: 180deg;
+}
+
+.is-dark .moon {
+  opacity: 1;
+  rotate: 0deg;
+}
+
+.dark-handle svg {
+  width: 28px;
+  height: 28px;
+  transition: all 500ms ease;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.dark-handle svg.moon {
+  width: 24px;
+  height: 24px;
+}
+
+.cloud1,
+.cloud2 {
+  transition: left 400ms ease, opacity 400ms ease;
+}
+
+.cloud1 {
+  background-color: white;
+  position: absolute;
+  left: 160%;
+  width: 6px;
+  border-radius: 50% 50% 6px 6px;
+  top: 20%;
+  height: 5px;
+  transition-delay: 50ms;
+}
+
+.cloud2 {
+  position: absolute;
+  left: 115%;
+  top: 60%;
+  transition-delay: 100ms;
+}
+
+.cloud3 {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  width: 15px;
+  border-radius: 50% 50% 3px 3px;
+  top: 0;
+  height: 7px;
+}
+
+.cloud4 {
+  background-color: white;
+  position: absolute;
+  left: 6px;
+  width: 8px;
+  border-radius: 50% 50% 3px 3px;
+  top: -3px;
+  height: 8px;
+}
+
+.is-dark .cloud1 {
+  left: -50%;
+  opacity: 0;
+  transition-delay: 0ms;
+}
+
+.is-dark .cloud2 {
+  left: -50%;
+  opacity: 0;
+  transition-delay: 0ms;
+}
+
+.star1,
+.star2,
+.star3,
+.star4 {
+  position: absolute;
+  transition: left 400ms ease, opacity 400ms ease;
+}
+
+.star1 {
+  left: 100%;
+  top: 8px;
+  opacity: 0;
+  transition-delay: 0;
+
+  & svg {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+.star2 {
+  left: 100%;
+  top: 0;
+  opacity: 0;
+  transition-delay: 0;
+
+  & svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.star3 {
+  left: 100%;
+  top: 0;
+  opacity: 0;
+  transition-delay: 0;
+
+  & svg {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+.star4 {
+  left: 100%;
+  top: 12px;
+  opacity: 0;
+  transition-delay: 0;
+
+  & svg {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.is-dark .star1 {
+  left: -90%;
+  top: 8px;
+  opacity: 1;
+  transition-delay: 20ms;
+}
+
+.is-dark .star2 {
+  left: -70%;
+  top: 0;
+  opacity: 1;
+  transition-delay: 60ms;
+}
+
+.is-dark .star3 {
+  left: -6px;
+  top: 0;
+  opacity: 1;
+  transition-delay: 8ms;
+}
+
+.is-dark .star4 {
+  left: -40%;
+  top: 12px;
+  opacity: 1;
+  transition-delay: 100ms;
+}

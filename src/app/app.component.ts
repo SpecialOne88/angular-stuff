@@ -7,10 +7,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs';
+import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
 
 @Component({
   selector: 'app-root',
   imports: [
+    DarkModeToggleComponent,
     MatButtonModule,
     MatIconModule,
     MatProgressBarModule,
