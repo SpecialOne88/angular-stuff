@@ -31,7 +31,7 @@
         <div *appHasPermission="'DONT_SHOW_ME'">dont show me</div>
         <div *appHasPermission="['YO', 'MAMA']">show me array</div>
     </div>
-    <div>
+    <div #buttonSection>
         <section>
             <div class="example-label">Basic</div>
             <div class="example-button-row">
@@ -488,6 +488,9 @@
                 </div>
                 <mat-icon class="icon-close">close</mat-icon>
             </button>
+        </div>
+        <div>
+            <button mat-button (click)="scrollToElement(buttonSection)">Scroll</button>
         </div>
     </div>
 </div>

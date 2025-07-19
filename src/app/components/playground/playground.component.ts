@@ -40,6 +40,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { PopOverDirective } from '../../utils/pop-over.directive';
 import { IntegerOnlyDirective } from '../../utils/integer-only.directive';
 import { HasPermissionDirective } from '../../utils/has-permission.directive';
+import { ScrollService } from '../../services/scroll.service';
 
 interface Food {
   value: string;
@@ -139,6 +140,8 @@ const NAMES: string[] = [
 })
 export class PlaygroundComponent implements OnInit {
   private readonly _formBuilder = inject(FormBuilder);
+
+  private readonly scrollService: ScrollService = inject(ScrollService);
 
   private readonly translate: TranslocoService = inject(TranslocoService);
 
@@ -256,6 +259,10 @@ export class PlaygroundComponent implements OnInit {
   isToggled = signal(true);
   toggle() {
     this.isToggled.set(!this.isToggled());
+  }
+
+  scrollToElement(element: HTMLElement) {
+    this.scrollService.scrollToElement(element, 80, 200, 'easeOutSine');
   }
 }
 

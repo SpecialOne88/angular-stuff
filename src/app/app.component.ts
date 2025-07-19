@@ -1,13 +1,14 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit, signal, viewChild } from '@angular/core';
 import { RouterOutlet, RouterModule, Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDrawerContent, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs';
 import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
+import { ScrollService } from './services/scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -24,13 +25,16 @@ import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
   private readonly router: Router = inject(Router);
+  private readonly scrollService: ScrollService = inject(ScrollService);
 
   protected readonly drawerIsOpen = signal<boolean>(false);
 
   protected readonly isLoadingRoute = signal(false);
+
+  readonly scrollableContainer = viewChild<MatDrawerContent>('container');
 
   private readonly routeEvents$ = this.router.events.pipe(
     takeUntilDestroyed(),
@@ -44,7 +48,13 @@ export class AppComponent implements OnInit {
   );
 
   ngOnInit(): void {
-    this.routeEvents$.subscribe();  
+    this.routeEvents$.subscribe();
+  }
+
+  ngAfterViewInit(): void {
+    if (this.scrollableContainer()) {
+      this.scrollService.setContainer(this.scrollableContainer()!.getElementRef().nativeElement);
+    }
   }
 
   protected drawerChanged(status: boolean) {
