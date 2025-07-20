@@ -14,6 +14,8 @@ import { getBrowserLang, provideTransloco, TranslocoService } from '@jsverse/tra
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { LocalizedPaginator } from './utils/localized-paginator';
 import { firstValueFrom } from 'rxjs';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import AnnotationPlugin from 'chartjs-plugin-annotation';
 
 registerLocaleData(localeEN);
 registerLocaleData(localeIT);
@@ -44,6 +46,7 @@ export const appConfig: ApplicationConfig = {
     },
     provideAppInitializer(() => {
       firstValueFrom(inject(TranslocoService).load(availableLangs.includes(getBrowserLang() ?? '') ? getBrowserLang()! : 'en'))
-    })
+    }),
+    provideCharts(withDefaultRegisterables(AnnotationPlugin))
   ]
 };

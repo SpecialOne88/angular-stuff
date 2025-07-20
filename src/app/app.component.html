@@ -24,6 +24,12 @@
           <span>Playground</span>
         </button>
       </li>
+      <li>
+        <button mat-button [routerLink]="'chart'" (click)="drawer.close()">
+          <mat-icon>insert_chart</mat-icon>
+          <span>Chart</span>
+        </button>
+      </li>
     </ul>
   </mat-drawer>
   <mat-drawer-content #container>
