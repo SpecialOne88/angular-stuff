@@ -1,3 +1,5 @@
+// RESET
+
 * {
   box-sizing: border-box;
 }
@@ -13,6 +15,41 @@ body {
   overflow-x: hidden;
   font-family: var(--material-font, sans-serif);
 }
+
+// UTILITIES
+
+.page-wrapper {
+  --margin: 4rem;
+  --max-size: 960px;
+  width: min(100% - var(--margin), var(--max-size));
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.content-grid {
+  --padding-inline: 2rem;
+  --content-max-width: 1200px;
+  display: grid;
+  grid-template-columns: [full-width-start] minmax(var(--padding-inline), 1fr) [content-start] min(
+      100% - (var(--padding-inline) * 2),
+      var(--content-max-width)
+    ) [content-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > *,
+.grid-full-width > * {
+  grid-column: content;
+}
+
+.content-grid > .grid-full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+// SIDE MENU
 
 .drawer-container {
   height: calc(100% - var(--mat-toolbar-standard-height, 64px));
@@ -54,6 +91,8 @@ body {
     }
   }
 }
+
+// HAMBURGER BUTTON
 
 button.side-menu-toggle-button {
   min-width: 45px;
@@ -134,6 +173,8 @@ button.side-menu-toggle-button {
     }
   }
 }
+
+// DATE PICKER BUTTONS
 
 .date-buttons-container {
   position: absolute;
