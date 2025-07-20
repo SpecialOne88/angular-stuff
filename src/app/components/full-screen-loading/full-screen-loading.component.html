@@ -1,0 +1,15 @@
+@if (isLoading()) {
+<div class="loading-container" [class.animation-out]="isAnimating()">
+    <div class="background-panel back-top"></div>
+    <div class="background-panel back-bottom"></div>
+    <div class="loading-main-panel">
+        <div class="loading-image">
+            <img src="" alt="Image Logo">
+        </div>
+        <span class="divider left"></span>
+        <span class="divider right"></span>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        <div class="loading-message">{{message()}}</div>
+    </div>
+</div>
+}

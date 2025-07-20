@@ -42,6 +42,7 @@ import { IntegerOnlyDirective } from '../../utils/integer-only.directive';
 import { HasPermissionDirective } from '../../utils/has-permission.directive';
 import { ScrollService } from '../../services/scroll.service';
 import { OpenWindowService } from '../../services/open-window.service';
+import { LoadingService } from '../full-screen-loading/full-screen-loading.component';
 
 interface Food {
   value: string;
@@ -147,6 +148,8 @@ export class PlaygroundComponent implements OnInit {
   private readonly translate: TranslocoService = inject(TranslocoService);
 
   private readonly windowService: OpenWindowService = inject(OpenWindowService);
+
+  private readonly loading: LoadingService = inject(LoadingService);
 
   readonly toppings = this._formBuilder.group({
     pepperoni: false,
@@ -270,6 +273,11 @@ export class PlaygroundComponent implements OnInit {
 
   openLink() {
     this.windowService.openLinkInTab('https://www.google.com');
+  }
+
+  loadingTest() {
+    this.loading.setLoading(true, 'Loading, just calm down');
+    setTimeout(() => this.loading.setLoading(false), 2000);
   }
 }
 

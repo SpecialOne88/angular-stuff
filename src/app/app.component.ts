@@ -9,11 +9,13 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs';
 import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
 import { ScrollService } from './services/scroll.service';
+import { FullScreenLoadingComponent } from './components/full-screen-loading/full-screen-loading.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     DarkModeToggleComponent,
+    FullScreenLoadingComponent,
     MatButtonModule,
     MatIconModule,
     MatProgressBarModule,
