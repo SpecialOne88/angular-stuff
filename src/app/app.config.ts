@@ -18,6 +18,8 @@ import { firstValueFrom } from 'rxjs';
 registerLocaleData(localeEN);
 registerLocaleData(localeIT);
 
+const availableLangs = ['en', 'it'];
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -41,7 +43,7 @@ export const appConfig: ApplicationConfig = {
       useFactory: (translateService: TranslocoService) => new LocalizedPaginator(translateService).getPaginatorIntl()
     },
     provideAppInitializer(() => {
-      firstValueFrom(inject(TranslocoService).load(getBrowserLang() ?? 'en'))
+      firstValueFrom(inject(TranslocoService).load(availableLangs.includes(getBrowserLang() ?? '') ? getBrowserLang()! : 'en'))
     })
   ]
 };

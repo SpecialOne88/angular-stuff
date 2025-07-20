@@ -1,9 +1,9 @@
 import { Overlay, OverlayModule, OverlayRef } from "@angular/cdk/overlay";
 import { ComponentPortal } from "@angular/cdk/portal";
 import { NgTemplateOutlet } from "@angular/common";
-import { Component, DestroyRef, Directive, ElementRef, HostListener, inject, input, model, TemplateRef } from "@angular/core";
+import { Component, DestroyRef, Directive, ElementRef, HostListener, inject, input, model, OnDestroy, OnInit, signal, TemplateRef } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { Subject, Subscription } from "rxjs";
+import { Subject, Subscription, takeUntil } from "rxjs";
 
 @Directive({
     selector: '[appPopOver]',
@@ -159,5 +159,108 @@ export class PopOverComponent {
     @HostListener('mouseleave')
     onMouseLeave() {
         this.mouseLeaveSub.next(1);
+    }
+}
+
+@Directive({
+    selector: '[appPopOverClick]',
+    standalone: true
+})
+export class PopOverClickDirective implements OnInit {
+
+    public popOver = input.required<TemplateRef<unknown>>();
+
+    private overlayRef: OverlayRef | null = null;
+
+    private readonly elementRef: ElementRef<HTMLButtonElement> = inject(ElementRef<HTMLButtonElement>);
+    private readonly overlay: Overlay = inject(Overlay);
+    private readonly destroyRef: DestroyRef = inject(DestroyRef);
+
+    private readonly isOpen = signal(false);
+
+    private close$ = new Subject<void>();
+
+    ngOnInit(): void {
+        if (!this.elementRef.nativeElement) {
+            return;
+        }
+
+        this.elementRef.nativeElement.addEventListener('click', () => {
+            if (!this.isOpen()) {
+                this.openPopOver();
+            }
+        });
+    }
+
+    private openPopOver() {
+        this.isOpen.set(true);
+
+        if (this.overlayRef?.hasAttached()) {
+            return;
+        }
+
+        const positionStrategy = this.overlay.position()
+            .flexibleConnectedTo(this.elementRef)
+            .withPositions([
+                {
+                    originX: 'center',
+                    originY: 'top',
+                    overlayX: 'center',
+                    overlayY: 'bottom',
+                    offsetY: 0
+                },
+                {
+                    originX: 'center',
+                    originY: 'bottom',
+                    overlayX: 'center',
+                    overlayY: 'top',
+                    offsetY: 0
+                }
+            ]);
+
+        this.overlayRef = this.overlay.create({
+            positionStrategy: positionStrategy
+        });
+
+        const portal = new ComponentPortal(PopOverComponent);
+        const componentRef = this.overlayRef.attach(portal);
+        componentRef.instance.contentTemplate.set(this.popOver());
+
+        this.overlayRef.outsidePointerEvents().pipe(
+            takeUntilDestroyed(this.destroyRef),
+            takeUntil(this.close$)
+        ).subscribe({
+            next: e => {
+                if (e.type === 'click') {
+                    this.isOpen.set(false);
+                    this.overlayRef?.detach();
+                    this.close$.next();
+                }
+            }
+        });
+
+        this.overlayRef.keydownEvents().pipe(
+            takeUntilDestroyed(this.destroyRef),
+            takeUntil(this.close$)
+        ).subscribe({
+            next: e => {
+                if (e.key === 'Escape') {
+                    this.isOpen.set(false);
+                    this.overlayRef?.detach();
+                    this.close$.next();
+                }
+            }
+        });
+
+        this.overlayRef.backdropClick().pipe(
+            takeUntilDestroyed(this.destroyRef),
+            takeUntil(this.close$)
+        ).subscribe({
+            next: () => {
+                this.isOpen.set(false);
+                this.overlayRef?.detach();
+                this.close$.next();
+            }
+        });
     }
 }

@@ -37,7 +37,7 @@ import { TimePickerComponent } from '../time-picker/time-picker.component';
 import { LazyAccordionComponent, LazyContentDirective } from '../lazy-accordion/lazy-accordion.component';
 import { DateMaskFullDirective, DateMaskMonthDirective, DateMaskYearDirective } from '../../utils/date-utils';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { PopOverDirective } from '../../utils/pop-over.directive';
+import { PopOverClickDirective, PopOverDirective } from '../../utils/pop-over.directive';
 import { IntegerOnlyDirective } from '../../utils/integer-only.directive';
 import { HasPermissionDirective } from '../../utils/has-permission.directive';
 import { ScrollService } from '../../services/scroll.service';
@@ -131,6 +131,7 @@ const NAMES: string[] = [
     MatTimepickerModule,
     MatTooltipModule,
     PopOverDirective,
+    PopOverClickDirective,
     ReactiveFormsModule,
     TimePickerComponent,
     TranslocoModule
