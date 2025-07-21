@@ -270,6 +270,25 @@
             <mat-label>Numbers Only</mat-label>
             <input matInput appIntegerOnly>
         </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Combo-Box</mat-label>
+            <app-combo-box [formControl]="nameCtrl">
+                @for (name of names; track name.value) {
+                <mat-option [value]="name.value">{{name.viewValue}}</mat-option>
+                }
+            </app-combo-box>
+        </mat-form-field>
+        <mat-form-field [subscriptSizing]="'dynamic'" style="width: 100%;">
+            <mat-label>Names Classic</mat-label>
+            <mat-select [formControl]="nameCtrl">
+                @for (name of names; track name.value) {
+                <mat-option [value]="name.value">{{name.viewValue}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        {{nameCtrl.value}}
     </div>
     <div>
         <button mat-button (click)="openDialog()">Open dialog</button>

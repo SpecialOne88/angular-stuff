@@ -43,6 +43,7 @@ import { HasPermissionDirective } from '../../utils/has-permission.directive';
 import { ScrollService } from '../../services/scroll.service';
 import { OpenWindowService } from '../../services/open-window.service';
 import { LoadingService } from '../full-screen-loading/full-screen-loading.component';
+import { ComboBoxComponent } from '../combo-box/combo-box.component';
 
 interface Food {
   value: string;
@@ -67,6 +68,7 @@ const FRUITS: string[] = [
   'pomegranate',
   'pineapple',
 ];
+
 const NAMES: string[] = [
   'Maia',
   'Asher',
@@ -93,6 +95,7 @@ const NAMES: string[] = [
   selector: 'app-playground',
   imports: [
     AsyncPipe,
+    ComboBoxComponent,
     DateMaskFullDirective,
     DateMaskMonthDirective,
     DateMaskYearDirective,
@@ -174,6 +177,9 @@ export class PlaygroundComponent implements OnInit {
     { value: 'pizza-1', viewValue: 'Pizza' },
     { value: 'tacos-2', viewValue: 'Tacos' },
   ];
+
+  names: Food[] = NAMES.map(x => <Food>{ value: x, viewValue: x });
+  nameCtrl = new FormControl<string>('Olivia', [Validators.required]);
 
   readonly dialog = inject(MatDialog);
 

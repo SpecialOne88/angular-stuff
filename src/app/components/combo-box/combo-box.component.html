@@ -1,0 +1,16 @@
+<mat-select [formControl]="valueCtrl" #select (focusin)="onFocusIn()" (focusout)="onFocusOut($event)">
+    <input matInput [formControl]="filterCtrl" class="filter" placeholder="Filter..." (focusin)="onFocusIn()">
+    @if (filterCtrl.value) {
+    @for (opt of filteredOptions(); track opt.value) {
+    <mat-option [value]="opt.value">{{opt.viewValue}}</mat-option>
+    }
+    }
+    @else {
+    @for (opt of allOptions(); track opt.value) {
+    <mat-option [value]="opt.value">{{opt.viewValue}}</mat-option>
+    }
+    }
+</mat-select>
+<div style="display: none;">
+    <ng-content></ng-content>
+</div>
